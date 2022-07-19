@@ -10,7 +10,7 @@
     <title>FUll Rest API</title>
 </head>
 <body>
-    <main>
+    <main style=" padding: 0 2rem;">
         <div class=" title">
             <h1>Full Rest API</h1>
         </div>
