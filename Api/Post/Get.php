@@ -1,11 +1,10 @@
 <?php
 
+    namespace Api\Post;
+
     // Headers
-    //header('Access-Control-Allow-Origin: *');
-    //header('Content-Type: application/json');
-
-
-    namespace Api;
+    header('Access-Control-Allow-Origin: *');
+    header('Content-Type: application/json');
 
     // Including files
     include_once '../../config.php';
