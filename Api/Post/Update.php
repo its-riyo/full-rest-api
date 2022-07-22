@@ -12,35 +12,30 @@
     include_once "../../config.php";
 
     use Models\PostModel;
+    use Models\ApikeyModel;
 
-    // Get post data
-    $deleteQueryString = file_get_contents("php://input");
-    parse_str($deleteQueryString, $data);
-
-    if(!$data['id'] || count($data) <= 0) {
-        $response = json_encode(["Error" => "You need to fill all the fields!"]);
+    // Check if request has an apiKey param
+    if(ApikeyModel::keyCheck() == false) {
+        $response = json_encode(['Error' => 'You need a valid apiKey!']);
         echo $response;
-        return false;
-    }
-
-    if(PostModel::update($data) == true) {
-        $response = json_encode(["Success" => "The post was updated!", "Data" => $data]);
-        echo $response;
-        return false;
     } else {
-        $response = json_encode(["Error" => "OOps, something went wrong :("]);
-        echo $response;
-        return false;
-    };
-    
-    /*
-    if($data['title'] != null && $data['body'] != null && $data['author'] != null) {
-        // Storing a new post
-        if(PostModel::create($data) == true) {
-            $response = json_encode(["Success" => "Post created successfully!", "Data" => $data]);
+        // Get post data
+        $deleteQueryString = file_get_contents("php://input");
+        parse_str($deleteQueryString, $data);
+
+        if(!$data['id'] || count($data) <= 0) {
+            $response = json_encode(["Error" => "You need to fill all the fields!"]);
             echo $response;
+            return false;
         }
-    } else {
-        $response = json_encode(["Error" => "Fields are missing"]);
-        echo $response;
-    };*/
+
+        if(PostModel::update($data) == true) {
+            $response = json_encode(["Success" => "The post was updated!", "Data" => $data]);
+            echo $response;
+            return false;
+        } else {
+            $response = json_encode(["Error" => "OOps, something went wrong :("]);
+            echo $response;
+            return false;
+        };
+    };

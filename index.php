@@ -18,7 +18,8 @@
         <div class=" title">
             <h3>About</h3>
             <ul>
-                <li>Full rest API with all Get,Create,Delete and Update methods, pure PHP code communicating with a mysql database</li>
+                <li>Full rest API with all Get,Create,Delete and Update methods, pure PHP code communicating with a mysql database.</li>
+                <li>API key system.</li>
                 <li>PostMan was used to make all requests.</li>
             </ul>
         </div>
@@ -36,31 +37,40 @@
             <h3>End Points</h3>
             <ul>
                 <div style=" border-bottom: 1px solid black; padding: 0.5rem;" >
-                    <li><a href="http://localhost/full-rest-api/Api/Post/Get.php" target="_blank">http://localhost/full-rest-api/Api/Post/Get.php</a></li>
+                    <li><a href="http://localhost/full-rest-api/Api/Post/Get.php?apiKey=YOURAPIKEY" target="_blank">http://localhost/full-rest-api/Api/Post/Get.php?apiKey=YOURAPIKEY</a></li>
                     <p style=" margin-left: 2rem;">Send a GET request here to get all posts</p>
                 </div>
                 
                 <div style=" border-bottom: 1px solid black; padding: 0.5rem;" >
-                    <li><a href="http://localhost/full-rest-api/Api/Post/Create.php" target="_blank">http://localhost/full-rest-api/Api/Post/Create.php</a></li>
+                    <li><a href="http://localhost/full-rest-api/Api/Post/Create.php?apiKey=YOURAPIKEY" target="_blank">http://localhost/full-rest-api/Api/Post/Create.php?apiKey=YOURAPIKEY</a></li>
                     <p style=" margin-left: 2rem;">Send a POST request here to create a new post</p>
                 </div>
 
                 <div style=" border-bottom: 1px solid black; padding: 0.5rem;" >
-                    <li><a href="http://localhost/full-rest-api/Api/Post/Delete.php" target="_blank">http://localhost/full-rest-api/Api/Post/Delete.php</a></li>
+                    <li><a href="http://localhost/full-rest-api/Api/Post/Delete.php?apiKey=YOURAPIKEY" target="_blank">http://localhost/full-rest-api/Api/Post/Delete.php?apiKey=YOURAPIKEY</a></li>
                     <p style=" margin-left: 2rem;">Send a DELETE request here to delete a post</p>
                 </div>
 
                 <div style=" border-bottom: 1px solid black; padding: 0.5rem;" >
-                    <li><a href="http://localhost/full-rest-api/Api/Post/Update.php" target="_blank">http://localhost/full-rest-api/Api/Post/Update.php</a></li>
+                    <li><a href="http://localhost/full-rest-api/Api/Post/Update.php?apiKey=YOURAPIKEY" target="_blank">http://localhost/full-rest-api/Api/Post/Update.php?apiKey=YOURAPIKEY</a></li>
                     <p style=" margin-left: 2rem;">Send a PUT request here to update a post</p>
                 </div>
             </ul>
         </div>
 
         <div class=" title">
+            <h3>Api Keys</h3>
+            <ul>
+                <li>ygh236t2u4p6</li>
+                <li>3b479ytpbrt2</li>
+                <li>3g5ufg53iuegv</li>
+            </ul>
+        </div>
+
+        <div class=" title">
             <h3>Version</h3>
             <p>
-                1.0.0
+                0.2.0
             </p>
         </div>
 

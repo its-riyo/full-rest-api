@@ -13,16 +13,23 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+    use Models\ApikeyModel;
     use \Models\PostModel;
-
-    // Get data
-    $data = PostModel::all();
-
-    // Checking if something was found
-    if(count($data) > 0){
-        $response = json_encode($data);
+        
+    // Check if request has an apiKey param
+    if(ApikeyModel::keyCheck() == false) {
+        $response = json_encode(['Error' => 'You need a valid apiKey!']);
         echo $response;
     } else {
-        $response = json_encode(["Response" => "Error", "Message" => "0 Results"]);
-        echo $response;
-    }
+        // Get data
+        $data = PostModel::all();
+
+        // Checking if something was found
+        if(count($data) > 0){
+            $response = json_encode($data);
+            echo $response;
+        } else {
+            $response = json_encode(["Response" => "Error", "Message" => "0 Results"]);
+            echo $response;
+        };
+    };
